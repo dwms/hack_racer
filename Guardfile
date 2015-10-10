@@ -16,5 +16,8 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard :shell do
-  watch("swagger.yaml")     { |m| `java -jar swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate -i swagger.yaml -l nodejs -o generated_server/` }
+  watch("swagger.yaml") do |m| 
+`java -jar swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate -i swagger.yaml -l nodejs -o generated_server/` 
+`sed -i '' -e 's|\./DefaultService|\.\./controllers/DefaultService|g' ./generated_server/controllers/Default.js`
+end
 end
