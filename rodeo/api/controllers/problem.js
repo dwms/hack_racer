@@ -11,7 +11,8 @@
   It is a good idea to list the modules that your application depends on in the package.json in the project root
  */
 var util = require('util');
-var problemProvider = require('../models/problem_provider')
+var ProblemProvider = require('../models/problem_provider')
+var problemProvider = new ProblemProvider()
 
 /*
  Once you 'require' a module you can reference the things that it exports.  These are defined in module.exports.
