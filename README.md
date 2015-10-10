@@ -1,6 +1,6 @@
 #hack racer
 
-
+<img src="https://travis-ci.org/dwms/hack_racer.svg?branch=master">
 
 One time when creating a project:
 - npm install -g swagger
