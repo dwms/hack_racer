@@ -1,4 +1,4 @@
-#hack racer
+#Rodeo
 
 <img src="https://travis-ci.org/dwms/hack_racer.svg?branch=master">
 
