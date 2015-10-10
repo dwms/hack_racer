@@ -53,7 +53,9 @@ function currentProblem(req, res) {
 function submitAnswer(req, res) {
   // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
   var answer = req.swagger.params.answer.value;
-  var respJson = { correct : answer === problemProvider.currentProblem().answer }
+  var correct = answer === problemProvider.currentProblem().answer
+  var respJson = { correct :  correct }
+  if(correct) problemProvider.markProblemSolved()
 
   // this sends back a JSON response which is a single string
   res.json(respJson);
